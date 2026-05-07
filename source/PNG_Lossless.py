@@ -34,7 +34,7 @@ def main():
     dst_dir = Path('output')
     dst_dir.mkdir(exist_ok=True)
     
-    exts = {'.jpg', '.jpeg', '.png', '.bmp', '.tiff', '.tif', '.webp', '.avif', '.jxl'}
+    exts = {'.jpg', '.jpeg', '.png', '.bmp', '.tiff', '.tif', '.webp', '.avif', '.heic', '.heif', '.jxl'}
     files = [f for f in src_dir.iterdir() if f.is_file() and f.suffix.lower() in exts]
     
     if not files:
