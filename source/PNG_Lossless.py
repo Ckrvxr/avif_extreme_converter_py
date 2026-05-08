@@ -4,6 +4,8 @@ import tempfile
 from pathlib import Path
 import subprocess
 
+SCRIPT_DIR = Path(__file__).resolve().parent
+
 def compress_with_zopfli(src, dst):
     temp_png = None
     input_path = str(src)
@@ -30,8 +32,8 @@ def compress_with_zopfli(src, dst):
     return result.returncode == 0
 
 def main():
-    src_dir = Path('input')
-    dst_dir = Path('output')
+    src_dir = SCRIPT_DIR.parent / 'input'
+    dst_dir = SCRIPT_DIR.parent / 'output'
     dst_dir.mkdir(exist_ok=True)
     
     exts = {'.jpg', '.jpeg', '.png', '.bmp', '.tiff', '.tif', '.webp', '.avif', '.heic', '.heif', '.jxl'}

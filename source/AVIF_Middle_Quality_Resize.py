@@ -3,6 +3,8 @@ import os
 from pathlib import Path
 import subprocess
 
+SCRIPT_DIR = Path(__file__).resolve().parent
+
 def convert_to_avif(src, dst):
     cmd = [
         'ffmpeg', '-v', 'error',
@@ -18,8 +20,8 @@ def convert_to_avif(src, dst):
     return subprocess.run(cmd).returncode == 0
 
 def main():
-    src_dir = Path('input')
-    dst_dir = Path('output')
+    src_dir = SCRIPT_DIR.parent / 'input'
+    dst_dir = SCRIPT_DIR.parent / 'output'
     dst_dir.mkdir(exist_ok=True)
     
     exts = {'.jpg', '.jpeg', '.png', '.bmp', '.tiff', '.tif', '.webp', '.avif', '.heic', '.heif', '.jxl'}
