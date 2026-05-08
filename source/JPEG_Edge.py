@@ -104,8 +104,8 @@ def main():
                             help='Maximum resolution in pixels (longest side), 0 = keep original')
         args = parser.parse_args()
 
-    src_dir = Path('input')
-    dst_dir = Path('output')
+    src_dir = SCRIPT_DIR.parent / 'input'
+    dst_dir = SCRIPT_DIR.parent / 'output'
     dst_dir.mkdir(exist_ok=True)
 
     exts = {'.jpg', '.jpeg', '.png', '.bmp', '.tiff', '.tif', '.webp', '.avif', '.heic', '.heif', '.jxl'}
