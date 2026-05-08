@@ -11,7 +11,7 @@ def convert_to_avif(src, dst):
         '-c:v', 'libaom-av1',
         '-crf', '48',
         '-b:v', '0',
-        '-cpu-used', '0',
+        '-cpu-used', '4',
         str(dst)
     ]
     return subprocess.run(cmd).returncode == 0

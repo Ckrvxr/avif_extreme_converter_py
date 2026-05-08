@@ -19,7 +19,7 @@ def compress_with_zopfli(src, dst):
         input_path = temp_png
 
     zop_cmd = [
-        'zopflipng', '-y', '--lossy_transparent',
+        'zopflipng', '-y', '--lossy_transparent', '--iterations=15',
         input_path, str(dst)
     ]
     result = subprocess.run(zop_cmd, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)

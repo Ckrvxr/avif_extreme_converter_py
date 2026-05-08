@@ -10,7 +10,7 @@ def convert_to_jxl(src, dst):
         '-y',
         '-c:v', 'libjxl',
         '-distance', '1.0',
-        '-effort', '9',
+        '-effort', '7',
         str(dst)
     ]
     return subprocess.run(cmd).returncode == 0
